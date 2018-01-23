@@ -1,9 +1,18 @@
 
-var express = require('express')
-var app = express()
- 
+const express = require('express')
+const app = express()
+const port = 8080
+
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  let data = {
+    port: port,
+    hello: 'world'
+  }
+  //res.send('Hello World')
+  res.json(data);
 })
  
-app.listen(3000)
+app.listen(port, () => {
+  console.log('Express is started on port ' + port)
+  
+})
