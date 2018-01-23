@@ -3,6 +3,10 @@ const express = require('express')
 const app = express()
 const port = 8080
 
+app.get('/test.html', function(req, res){
+  res.send('hello');
+})
+
 app.get('/search/', function (req, res) {
   let data = {
     port: port,
